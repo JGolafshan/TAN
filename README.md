@@ -1,8 +1,6 @@
 # Twitter Bot
 Publishes news articles on a scheduled basis.
-## Features
-* Uses [schedule](https://pypi.org/project/schedule/) to post consistently thought out the day
-* 
 
 ## TODO
-*
+* write docstrings and comments
+* Run the program from server (tasks setup, modules installed) run file is left
