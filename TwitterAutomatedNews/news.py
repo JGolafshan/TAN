@@ -1,8 +1,17 @@
+from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstractor
+from pysummarization.tokenizabledoc.simple_tokenizer import SimpleTokenizer
+from pysummarization.nlpbase.auto_abstractor import AutoAbstractor
+from TwitterAutomatedNews import twitter, news, database
+from datetime import datetime
+from gnews import GNews
+import tweepy
+
+
 class News:
     def __init__(self, data):
         self.data = data
-        self.database = Database()
-        self.twitter = Twitter()
+        self.database = database.Database()
+        self.twitter = twitter.Twitter()
         self.auto_abstractor = AutoAbstractor()
 
     def trends(self, country):
@@ -37,7 +46,6 @@ class News:
                         news_article[0]["publisher"]["title"])
             except AttributeError:
                 return None
-
             if full_article.is_valid_body() is True:
                 summarise = self.summarise(full_article.text)
                 if self.database.check_similar_posts("-12 hours", news) is False:

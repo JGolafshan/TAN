@@ -1,3 +1,8 @@
+from fuzzywuzzy import process
+from fuzzywuzzy import fuzz
+import sqlite3
+import os
+from TwitterAutomatedNews import twitter, news, database
 
 
 

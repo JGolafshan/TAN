@@ -1,3 +1,8 @@
+import tweepy
+from TwitterAutomatedNews import twitter, news, database
+
+
+
 class Twitter:
     def __init__(self):
         auth = tweepy.OAuthHandler("HgrXzpH5fqfvosL6vSm9aYZqX", "yKXBs1vBUJSQWOVNMSktGkOKBFiKUPQidCVLYLemOXa3fG3Ws7")
