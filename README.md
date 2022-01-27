@@ -3,7 +3,5 @@
 
 # TODO
 * add comments and docstring
-* remove special character, if their at the start of the summery, make sure first letter is capiltised 
+* summery (special characters, white space, first letter, capitalized)
 * If an article is missing info, research using different providing
-* break up code 
-* work on speeding up article
