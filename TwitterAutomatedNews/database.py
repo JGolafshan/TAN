@@ -4,6 +4,8 @@ from fuzzywuzzy import fuzz
 import sqlite3
 import os
 
+# TODO: CreateDB Function
+# TODO: Optimize SImilarity Model
 
 class Database:
     def __init__(self):
