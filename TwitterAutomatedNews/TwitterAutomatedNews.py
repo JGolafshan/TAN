@@ -11,6 +11,11 @@ import tweepy
 import time
 import os
 
+consumer_key="xxx"
+consumer_secret="yyy"
+access_token="zzz"
+access_token_secret="www"
+
 
 class TAN:
     def __init__(self):
@@ -18,7 +23,7 @@ class TAN:
         self.news = News()
         self.database = Database()
         self.dt_formats = ["%a, %d %b %Y %H:%M:%S GMT", "%Y-%m-%d %H:%M:%S"]
-
+    
     def retrieve_articles(self):
         self.database.create_database()
         trends = self.news.trends()
@@ -35,7 +40,7 @@ class TAN:
                 keyword=row.values[0])
 
         return last_row
-
+        
     def add_to_twitter(self):
         article_db = self.database.select_articles(self.retrieve_articles(), self.database.cursor.lastrowid)
         for article in article_db:
@@ -47,9 +52,8 @@ class TAN:
 
 class Twitter:
     def __init__(self):
-        auth = tweepy.OAuthHandler("HgrXzpH5fqfvosL6vSm9aYZqX", "yKXBs1vBUJSQWOVNMSktGkOKBFiKUPQidCVLYLemOXa3fG3Ws7")
-        auth.set_access_token("3295534592-IiBIJWqSQqKMZKVCEL04RwRgWaXAnB6TMb8VHyi",
-                              "M1Gn67DBn5pcK5rGcExFi1PAT8mQpTjXwj15DefXebABW")
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(access_token, access_token_secret)
         self.api = tweepy.API(auth)
 
     def check_credentials(self):
